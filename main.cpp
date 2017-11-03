@@ -29,8 +29,13 @@ void bubble_sort(double *array, unsigned int size){
 
 int main(){
     unsigned int size;
-    cin>>size;
-    cin.get();
+    string s;
+    getline(cin, s);
+    istringstream stream(s);
+    if(!(stream>>size)){
+        cout<<"An error has occured while reading input data."<<endl;
+        return -1;
+    }
     double *array=new double[size];
     if(read(array, size)){
         bubble_sort(array, size);
